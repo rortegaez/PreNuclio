@@ -1,0 +1,1 @@
+git para preprarme el inicio al curso de full stack 
