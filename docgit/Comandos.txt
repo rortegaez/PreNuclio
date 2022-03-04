@@ -1,0 +1,5 @@
+consola de comandos:
+
+Ins (insertar) - para empezar a escribir
+Scape - cuando se termina de escribir
+:wq - para salir de la consola ":qw

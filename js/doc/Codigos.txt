@@ -1,0 +1,16 @@
+Comentarios:
+
+// comentarios en una sola línea
+
+/* Comentarios que ocupan más de una lines
+*/
+
+Propierties:
+propiedad que tiene los datos que estoy introduciendo.
+
+Metodo:
+acciones que podemos realizar.
+ejemplo: 'string' .methodname();
+
+Variables:
+las variables son contenedores de información, contenedores de valores.
