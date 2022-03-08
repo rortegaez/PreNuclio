@@ -26,12 +26,59 @@ h1{
     padding: 15px;
     font: normal 2.4em Verdada, Geneva, sans-serif;
     background: -webkit-linear-gradient(top, #00F, #0CF);
+    padding: 15px;
+    box-shadow: blue 10px 10px 8px;
+    text-shadow: white 3px 3px 2px;
 }
 
 h2{
-
+    text: bold 1.7em Verdada, Geneva, sans-serif;
+    margin: 0px;
+    padding: 5px 0px 5px 0px; 
 }
 
 body{
     font-size: 62.5%;
+}
+
+section{
+    width: 90%;
+    margin: 15px auto;
+    border-top: 1px dashed #999;
+    
+}
+
+figure{
+    float: left;
+}
+
+figure img{
+    border-radius: 10px;
+    padding: 4px;
+    background-color: #999;
+    transition: transform 0.3s ease-in-out 0.2s;
+    box-shadow: #999 5px 5px 10px;
+
+}
+
+figcaption{
+    font: Arial, Helvetica, sans-serif;
+    font-size: 1.3em;
+    margin: 5px auto;
+    text-align: center;
+}
+
+figure img:hover{
+    transform: scale(1.2);
+}
+
+footer{
+    clear:both;
+    padding: 100px;
+}
+
+footer p{
+    font: 1.6em Georgia, "Times New Roman", Times, serif;
+    color:#666;
+    margin: 10px 8px;
 }
