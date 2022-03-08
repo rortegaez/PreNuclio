@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+        <title>Evento HTML5 addEventListener() anidados</title>
+
+        <script>
+
+            window.addEventListener("load", loseventos, false);
+
+            function loseventos(){
+                var elemento=document.getElementsByTagName("p")[0];
+                var elemento2=document.getElementsByTagName("img")[0];
+
+                elemento.addEventListener("click", aviso2, false);
+                elemento.addEventListener("click", aviso1, true);
+
+            }
+            function aviso1(){
+                alert("Hola soy la imagen");
+            }
+
+            function aviso2(){
+                alert("Hola soy el parrafo");
+            }
+        </script>
+    </head>
+
+    <body>
+
+        <p><img src="doc/1.jpg"></p>
+
+    </body>
+
+</html>
