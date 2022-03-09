@@ -12,7 +12,7 @@ function comenzar(){
     progreso=document.getElementById("progreso");
 
     reproducir.addEventListener("click", clicando, false);
-    progreso.addEventListener("click", adelantando, false);
+    barra.addEventListener("click", adelantando, false);
 
 }
 
@@ -23,6 +23,7 @@ function clicando(){
     }else{
         mivideo.play();
         reproducir.innerHTML="Pause";
+        bucle=setInterval(estado, 30);
     }
 }
 
@@ -33,8 +34,13 @@ function estado(){
     }
 }
 
-function adelantando(){
-    
+function adelantando(posicion){
+    if((mivideo.paused==false)&&(mivideo.ended==false)){
+        var ratonX=posicion.pageX-barra.offsetLeft;
+        var nuevotiempo=ratonX*mivideo.duration/maximo;
+        mivideo.currentTime=nuevotiempo;
+        progreso.style.width=ratonX+"px";
+    }
 }
 
 window.addEventListener("load", comenzar, false);
