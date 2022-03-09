@@ -1,0 +1,37 @@
+/* CSS3 Document */
+
+#video{
+    width: 400px;
+    margin: 20px auto;
+    background-color: yellow;
+    padding: 5px;
+    border: 3px solid red;
+    border-radius: 10px;
+    box-shadow: red 5px 5px 4px;
+}
+
+nav{
+    margin: 5px 0;
+}
+
+#botones{
+    float: left;
+    width: 100px;
+    height: 20px;
+}
+
+#barra{
+    background-color: white;
+    width: 320px;
+    height: 16px;
+    border: 1px solid grey;
+    margin-left: 70px;
+    border-radius: 5px;
+}
+
+#progreso{
+    position: absolute;
+    width: 0px;
+    height: 16px;
+    background-color: rgba(0, 0, 150, 2);
+}
