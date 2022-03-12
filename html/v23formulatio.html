@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
-        <title>Video 17 Video I</title>
+        <title>Video 24</title>
         <style>
             table{
                 text-align: center;
@@ -15,38 +15,38 @@
                 padding: 15px;
             }
         </style>
-
+        
         <script>
-            window.addEventListener("load", comenzar, false);
-            
-            function comenzar() {
-                var nombre=document.getElementById("nombre");
-                var apellido=document.getElementById("apellido");
+            window.addEventListener("load", comezar, false);
 
-                nombre.addEventListener("input", validar, false);
-                nombre.addEventListener("input", validar, false);
+            var edad;
 
-                validar();
+            function comenzar (){
+                edad=document.getElementById("miedad");
+
+                edad.addEventListener("change", cambiar_rango, false);
+
+                document.datos_usuario.addEventListener("invalid", validar, true);
+
+                document.getElementById("enviar").addEventListener("click", enviar, false);
             }
 
-            function validar(){
-                if(nombre.value=="" && apellido.value==""){ 
-                    nombre.setCustomValidity("Introduce nombre o apellido");
-                    nombre.style.background="#FFDDDD";
-                    apellido.style.background="#FFDDDD";
-                }else{
-                    nombre.setCustomValidity("");
+            function cambia_rang0(){
+                var salida=document.getElementById("rango");
+                var calculo=edad.value-30;
 
-                    nombre.style.background="#FFFFFF";
-                    apellido.style.background="#FFFFFF";
+                if(calculo<30){
+                    calculo=0
+                    edad.value=30;
                 }
+                salida.innerHTML=calculo+" a "+edad.value;
             }
         </script>
     </head>
 
     <body>
         <section>
-            <form name="registro_usuario" method="get">
+            <form name="datos_usuario" method="get">
                 <!-- <datalist id="informacion">
                     <option value="625115888" label="   Telefono 1"></option>
                     <option value="625154568" label="   Telefono 2"></option>
@@ -57,17 +57,22 @@
 
                 <table>
                     <tr>
-                        <td>Nombre</td>
-                        <td><input type="text" name="nombre" id="nombre"></td>
+                        <td>Usuario</td>
+                        <td><input pattern="[A-Za-z]{3}" name="usuario" id="usuario" maxlength="10" required></td>
                     </tr>
                     <tr>
-                        <td>Apellido</td>
-                        <td><input type="text" name="apellido" id="apellido"></td>
+                        <td>Email</td>
+                        <td><input type="email" name="miemmail" id="miemmail" required></td>
                     </tr>
                         <td>Edad</td>
-                        <td><input type="number" name="edad" id="edad" min="1" max="100"></td>
+                        <td><input type="range" name="miedad" id="miedad" min="0" max="120" value="30"></td>
                     <tr>
-                        <td><input type="submit" id="Enviar" value="Registrar"></td>
+                    <tr>
+                        <td>
+                            <output id="rango">0 a 30</output>
+                        </td>
+                    </tr>
+                        <td><input type="submit" id="enviar" value="Registrar"></td>
                     </tr>
 
                 </table>
