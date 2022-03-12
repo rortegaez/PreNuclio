@@ -17,7 +17,7 @@
         </style>
         
         <script>
-            window.addEventListener("load", comezar, false);
+            window.addEventListener("load", comenzar, false);
 
             var edad;
 
@@ -29,9 +29,11 @@
                 document.datos_usuario.addEventListener("invalid", validar, true);
 
                 document.getElementById("enviar").addEventListener("click", enviar, false);
+
+                document.datos_usuario.addEventListener("input", validar_tiempo_real, false);
             }
 
-            function cambia_rang0(){
+            function cambiar_rango(){
                 var salida=document.getElementById("rango");
                 var calculo=edad.value-30;
 
@@ -41,7 +43,32 @@
                 }
                 salida.innerHTML=calculo+" a "+edad.value;
             }
-        </script>
+
+            function validar(e){
+                var elemento=e.target;
+                elemento.style.background="#FFDDDD";
+            }
+
+            function enviar(){
+                var carrectp=document.datos_usuario.checkValidity();
+                var cuadro_usuario=documente.getElementById("usuario");
+
+                if(correcto==true){
+                    document.datos_usuario.submit();
+                }else if(cuadro_usuario.validity.valueMissing==true){
+                    alert("El usuario no puede estar vacío");
+                }
+            }
+
+            function validar_tiempo_real(e){
+                var elemento=e.target;
+                if(elemento.validity.valid==true){
+                    elemento.style.background="#FFFFFF";
+                }else{
+                    elemento.style.background="#FFDDDD";
+                }
+            }
+            </script>
     </head>
 
     <body>
@@ -65,7 +92,7 @@
                         <td><input type="email" name="miemmail" id="miemmail" required></td>
                     </tr>
                         <td>Edad</td>
-                        <td><input type="range" name="miedad" id="miedad" min="0" max="120" value="30"></td>
+                        <td><input type="range" name="miedad" id="miedad" min="0" max="120" step="30" value="30"></td>
                     <tr>
                     <tr>
                         <td>
