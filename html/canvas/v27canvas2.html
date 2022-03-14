@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+        <title>Video 27,28 Canvas II</title>
+
+        <style>
+
+            section{
+                width: 500px;
+                margin: auto;
+            }
+
+        </style>
+
+        <script>
+            window.addEventListener("load", comenzar, false);
+
+            function comenzar(){
+                var elemento=document.getElementById("lienzo");
+
+                lienzo=elemento.getContext("2d");
+
+                /*var degradado=lienzo.createLinearGradient(0,150,500,150);
+                degradado.addColorStop(0,"red");
+                degradado.addColorStop(0.9, "green");
+
+                lienzo.fillStyle=degradado;
+
+                lienzo.fillRect(0,0,500,300);*/
+
+                var degradado=lienzo.createRadialGradient(250,150,50,250,150,150);
+                degradado.addColorStop(0, "red");
+                degradado.addColorStop(1, "green");
+
+                lienzo.fillStyle=degradado;
+                lienzo.fillRect(0,0,500,300);
+            }
+        </script>
+    </head>
+
+    <body>
+
+        <section>
+            <canvas id="lienzo" width="500" height="300">Su navegador no soporta el elemento canvas</canvas>
+            <canvas id="lienzo2" width="500" height="300"></canvas>
+        </section>
+
+    </body>
+
+</html>

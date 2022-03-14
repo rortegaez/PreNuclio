@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+        <title>Video 31 Canvas VI</title>
+
+        <style>
+            #lienzo{
+                border: 1px solid red;
+            }
+            section{
+                width: 1200px;
+                position: relative;
+                margin: auto;
+            }
+        </style>
+
+        <script>
+            window.addEventListener("load", comenzar, false);
+
+            function comenzar(){
+                var elemento=document.getElementById("lienzo");
+                lienzo=elemento.getContext("2d");
+
+                /*lienzo.font="bold 20px verdana";
+                lienzo.fillText("Hola alumnos", 50,20);
+
+                lienzo.translate(100,100);
+                lienzo.scale(3,3);
+                lienzo.rotate(Math.PI);
+                lienzo.strokeText("Hola alumnos", -200,-10);                */
+
+                lienzo.transform(3,0,0,2,150,150);
+                lienzo.font="bold 20px verdanda";
+                lienzo.fillText("Hola alumnos", 50,50); 
+            }
+        </script>
+    </head>
+
+    <body>
+        
+        <section>
+            <canvas width="1200" height="900" id="lienzo">
+                Su navegador no soporta el elemento canvas.
+            </canvas>
+        </section>
+
+    </body>
+
+</html>    

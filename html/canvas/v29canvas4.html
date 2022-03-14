@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+        <title>Video 29 Canvas IV</title>
+
+        <style>
+
+            #lienzo{
+                border: 1px solid red;
+            }
+
+        </style>
+
+        <script>
+
+            window.addEventListener("load", comenzar, false);
+
+            function comenzar(){
+                var elemento=document.getElementById("lienzo");
+
+                lienzo=elemento.getContext("2d");
+                lienzo.beginPath();
+                lienzo.moveTo(100,200);
+                lienzo.lineTo(200,200);
+                lienzo.lineTo(150,150);
+                lienzo.lineTo(100,200);
+                lienzo.clip();
+
+
+                lienzo.beginPath();
+                for(i=0;i<250;i+=10){
+                    lienzo.moveTo(0,i);
+                    lienzo.lineTo(500,i);
+                }
+
+                lienzo.stroke();
+
+                //lienzo.fill();
+
+            }
+        </script>
+    </head>
+
+    <body>
+
+        <section id="dibujo">
+            <canvas id="lienzo" width="500" height="300">
+
+            </canvas>
+        </section>
+
+    </body>
+
+</html>

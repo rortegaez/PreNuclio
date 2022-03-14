@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+        <title>Video 30 Canvas V</title>
+
+        <style>
+            section{
+                text-align: center;
+            }
+            #lienzo{
+                border: 1px solid red;
+           }
+        </style>
+
+        <script>
+            window.addEventListener("load", comenzar, false);
+
+            function comenzar(){
+
+                var elemento=document.getElementById("lienzo");
+                lienzo=elemento.getContext("2d");
+
+                lienzo.beginPath();
+                //lienzo.arc(100,100,50,0,1,false);
+                lienzo.moveTo(250,50);
+                //lienzo.quadraticCurveTo(100,125,50,200);
+                lienzo.bezierCurveTo(200,125,300,200,250,200);
+
+                lienzo.stroke();
+            }
+        </script>
+    </head>
+
+    <body>
+        <section>
+            <canvas width="500" height="300" id="lienzo">
+                Su navegador no admite el elemento canvas.
+            </canvas>
+        </section>
+
+    </body>
+</html>

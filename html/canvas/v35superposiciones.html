@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+        <title>Video 35 Canvas X</title>
+
+        <style>
+            #lienzo{
+                border: 1px solid red;
+            }
+            section{
+                width: 1200px;
+                position: relative;
+                margin: auto;
+            }
+        </style>
+
+        <script>
+            window.addEventListener("load", comenzar, false);
+
+            function comenzar(){
+                var elemento=document.getElementById("lienzo");
+                lienzo=elemento.getContext("2d");
+
+                var imagen=new Image();
+                imagen.src="paisaje1.jpg";
+                imagen.addEventListener("load", function(){
+                  lienzo.drawImage(imagen,20,20,elemento.width,elemento.height)
+                },false);
+
+                /*var imagen=new Image();
+                imagen.src="paisaje1.jpg";
+                imagen.addEventListener("load", function(){
+                  lienzo.drawImage(imagen,50,10,75,75,0,0,300,300)
+                },false);*/
+
+                /*lienzo.fillStyle="blue";
+                lienzo.fillRect(400,250,300,100);
+
+                lienzo.globalCompositeOperation="destination-atop";
+
+                lienzo.fillStyle="grey";
+                lienzo.font="bold 80px verdana";
+                lienzo.textAlign="center";
+                lienzo.textBaseline="middle";
+                lienzo.fillText("Hola alumnos", 550,300);*/
+
+            }
+        </script>
+    </head>
+
+    <body>
+
+        <section>
+            <canvas width="1200" height="900" id="lienzo">
+                Su navegador no soporta el elemento canvas.
+            </canvas>
+        </section>
+
+    </body>
+
+</html>
