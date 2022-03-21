@@ -1,11 +1,13 @@
 //JavaScript Document
 
+//inicio de javaScript
 window.addEventListener("load", comenzar, false);
 
-
+//declaracion de variables
 var imagenes;
 var elem_destino;
-  
+
+//en función comenzar, reconocemos cada elemento y en que función actuan
 function comenzar(){
     imagenes=document.querySelectorAll("#cajaimagenes img");
 
@@ -30,16 +32,17 @@ function comenzar(){
     elem_destino.addEventListener("dragleave", saliendo, false);
 }
 
+//Que sucede cuando comenzamos a mover el objeto(dragstart)
 function comenzando_arrastrar(e){
-    var elemento=e.target;
-    elemento.dataTransfer.setData("text", elemento.getAttribute("id"));
+    //si declaramos la variable "elemento" da error
+    //var elemento=e.target;
+    e.dataTransfer.setData("Text", e.target.getAttribute("id"));
 }
 
+//cuando soltamos el objeto(drop)
 function soltado(e){
     e.preventDefault();
-    var id=e.dataTransfer.getData("text");
-
-    //alert("esta id es " + id);
+    var id=e.dataTransfer.getData("Text");
 
     if(id!="imagen2"){   
     var src=document.getElementById(id).src;
@@ -48,10 +51,9 @@ function soltado(e){
         elem_destino.innerHTML="La imagen no es admitida";
         elem_destino.style.background="red";
     }
-
-
 }
 
+//cuando se entra en zona de dejado (dragenter)
 function entrando(e){
     e.preventDefault();
     var id=e.dataTransfer.getData("Text");
@@ -62,11 +64,13 @@ function entrando(e){
     }
 }
 
+//cuando salimos de zona de dejado (dragleave)
 function saliendo(e){
     e.preventDefault();
     elem_destino.style.background="white";
 }
 
+//Cuando soltamos botón izquierdo (dragend)
 function terminado(e){
     var elemento=e.target;
     elemento.style.visibility="hidden";
